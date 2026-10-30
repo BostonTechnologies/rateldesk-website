@@ -1,0 +1,10 @@
+{
+  "documentedVersion": "0.1.2-beta.17",
+  "channel": "preview",
+  "stableVersion": "0.1.1",
+  "sourceRepo": "BostonTechnologies/rateldesk",
+  "sourceRef": "v0.1.2-beta.17",
+  "sourceCommit": "487052fab83d8d81cb41ae5b073fd75ab61e42ae",
+  "lastReviewed": "2026-10-30",
+  "releaseUrl": "https://github.com/BostonTechnologies/rateldesk/releases/tag/v0.1.2-beta.17"
+}

@@ -1,0 +1,45 @@
+---
+title: Make RatelDesk your own.
+description: Deploy your helpdesk, connect email and build self-service automation with practical RatelDesk guides.
+tableOfContents: false
+---
+
+import version from '../../../version.json';
+
+RatelDesk brings incidents, service requests, email and connected automation into one self-hosted helpdesk. Start with a working instance, then add the services your team needs.
+
+<div class="version-banner"><b>v{version.documentedVersion}</b><span>These guides describe the current preview. <a href="/releases/">See preview and stable downloads.</a></span></div>
+
+## Where do you want to start?
+
+<div class="doc-hub-grid">
+<a class="doc-hub-card" href="/docs/getting-started/quickstart/"><strong>Deploy your helpdesk</strong><span>Download the Compose bundle, start the services and complete the first-run setup.</span><small>GET STARTED →</small></a>
+<a class="doc-hub-card" href="/docs/email/overview/"><strong>Connect the support mailbox</strong><span>Choose Microsoft 365, IMAP or POP3 and configure routing and replies.</span><small>EMAIL SUPPORT →</small></a>
+<a class="doc-hub-card" href="/docs/automation/self-service-forms/"><strong>Make a request actionable</strong><span>Build a service form and connect its inputs to a configured NetRatel job.</span><small>SELF-SERVICE AUTOMATION →</small></a>
+<a class="doc-hub-card" href="/docs/integrations/overview/"><strong>Connect an assistant</strong><span>Choose native Netclaw ticket chat, HTTP MCP, stdio or a Teams-enabled Netclaw deployment.</span><small>INTEGRATIONS & AI →</small></a>
+</div>
+
+## Already running RatelDesk?
+
+| You want to… | Start here |
+| --- | --- |
+| Work through the support queue | [Incidents](/docs/guides/incidents/) · [Tasks and worklogs](/docs/guides/tasks-and-worklogs/) |
+| Offer a repeatable service | [Service requests](/docs/guides/service-requests/) · [Forms and jobs](/docs/automation/job-bindings/) |
+| Set up your team | [Organizations and access](/docs/guides/organizations-and-access/) · [Users and roles](/docs/identity/users-and-roles/) |
+| Choose how people sign in | [Local accounts](/docs/identity/local/) · [OpenID Connect](/docs/identity/oidc/) · [Hybrid](/docs/identity/hybrid/) |
+| Connect mail and replies | [Microsoft 365](/docs/email/microsoft-365/) · [IMAP and POP3](/docs/email/imap-and-pop3/) · [Outbound mail](/docs/email/outbound-mail/) |
+| Manage the wider service | [Changes](/docs/guides/changes/) · [Assets](/docs/guides/assets/) · [Service levels](/docs/guides/service-levels/) |
+| Bring helpdesk AI to Teams | [Microsoft Teams + Netclaw](/docs/integrations/microsoft-teams/) |
+| Turn infrastructure alerts into incidents | [NetRatel incident integration](/docs/integrations/netratel/) |
+| Maintain the installation | [Upgrades](/docs/deployment/upgrades/) · [Backup and restore](/docs/deployment/backup-and-restore/) |
+| Look up a command or setting | [CLI](/docs/reference/cli/) · [Configuration](/docs/reference/configuration/) |
+
+## Understand the pieces
+
+**Web** is the interface for your helpdesk. **API** handles helpdesk data, permissions and background work. **CLI and MCP** provide other ways to use the platform. Connect **NetRatel** to run configured automation, or **Netclaw** to bring an assistant into the workflow.
+
+[See the architecture](/docs/reference/architecture/) · [Choose a deployment](/docs/deployment/overview/) · [Understand the security model](/docs/reference/security/)
+
+## Need a hand?
+
+Start with [troubleshooting](/docs/reference/troubleshooting/) or the focused [mail troubleshooting guide](/docs/email/troubleshooting/). For a product issue, include your version, the affected feature and steps to reproduce it in a [GitHub issue](https://github.com/BostonTechnologies/rateldesk/issues). Every documentation page has an edit link for corrections.

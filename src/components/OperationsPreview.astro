@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+---
+<div class="hero-visual">
+ <div class="console desk-console">
+  <div class="console-top"><div class="window-dots"><i></i><i></i><i></i></div><span class="console-title">rateldesk / service workspace</span><span class="console-label">Example workspace</span></div>
+  <div class="console-tabs" role="tablist" aria-label="Example helpdesk workflows">
+   <button type="button" role="tab" id="preview-tab-inbox" aria-controls="preview-inbox" aria-selected="true" data-preview="inbox"><Icon name="inbox" size={13}/>Service desk</button>
+   <button type="button" role="tab" id="preview-tab-requests" aria-controls="preview-requests" aria-selected="false" data-preview="requests" tabindex="-1"><Icon name="flow" size={13}/>Self-service</button>
+   <button type="button" role="tab" id="preview-tab-ai" aria-controls="preview-ai" aria-selected="false" data-preview="ai" tabindex="-1"><Icon name="spark" size={13}/>AI assistant</button>
+  </div>
+  <div id="preview-inbox" class="console-pane" role="tabpanel" aria-labelledby="preview-tab-inbox" tabindex="0">
+   <div class="console-heading"><h3>Every request. A clear next step.</h3><span>Example organization</span></div>
+   <div class="console-metrics"><div class="console-metric"><p>Open incidents</p><strong>08 <small>in view</small></strong></div><div class="console-metric"><p>Service requests</p><strong>05 <i class="metric-dot"></i></strong></div><div class="console-metric"><p>Resolved today</p><strong>12 <small>completed</small></strong></div></div>
+   <table class="console-table"><thead><tr><th>Ticket</th><th>Subject</th><th>Status</th></tr></thead><tbody><tr><td>INC-1042</td><td>VPN connection issue</td><td><span class="status-pill amber">In progress</span></td></tr><tr><td>REQ-2031</td><td>New team workspace</td><td><span class="status-pill">Resolved</span></td></tr><tr><td>INC-1041</td><td>Shared drive access</td><td><span class="status-pill neutral">New</span></td></tr></tbody></table>
+  </div>
+  <div id="preview-requests" class="console-pane" role="tabpanel" aria-labelledby="preview-tab-requests" tabindex="0" hidden>
+   <div class="console-heading"><h3>A useful form. A configured job.</h3><span>Example request</span></div>
+   <div class="job-detail"><header>Create a team workspace <span class="status-pill">Resolved</span></header><div class="job-steps"><div><Icon name="check" size={12}/>Collect the request details<small>RatelDesk form</small></div><div><Icon name="check" size={12}/>Run the configured job<small>Mapped inputs · NetRatel</small></div><div><Icon name="check" size={12}/>Follow the run and its result<small>Linked request</small></div></div><div class="job-output">Example input: team = Research<br/>Run completed · Result available with the request</div></div>
+  </div>
+  <div id="preview-ai" class="console-pane" role="tabpanel" aria-labelledby="preview-tab-ai" tabindex="0" hidden>
+   <div class="console-heading"><h3>Keep the conversation in context.</h3><span>Example ticket chat</span></div>
+   <div class="chat-message">Summarise this incident and help me draft the next reply.</div><div class="chat-message assistant"><b>Netclaw</b>The requester cannot reach the shared drive. Their latest note confirms the account works elsewhere. Ask for the exact error and check the drive mapping next.<div class="chat-note">Illustrative draft · Review before sending</div></div>
+  </div>
+  <div class="console-bottom"><span>● Organization-scoped access</span><span>Self-hosted. Fully yours.</span></div>
+ </div>
+ <p class="preview-caption">Illustrative workflows with sample data · <a href="/docs/guides/incidents/">Explore the helpdesk guides ↗</a></p>
+</div>
+<script>
+ const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-preview]'));
+ function activate(tab: HTMLButtonElement) {
+  for(const t of tabs) { const selected = t === tab; t.setAttribute('aria-selected', String(selected)); t.tabIndex = selected ? 0 : -1; const panel = document.getElementById(`preview-${t.dataset.preview}`); if(panel) panel.hidden = !selected; }
+ }
+ tabs.forEach((tab, i) => { tab.addEventListener('click', () => activate(tab)); tab.addEventListener('keydown', e => { if(['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) { e.preventDefault(); const index = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length-1 : (i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length; activate(tabs[index]); tabs[index].focus(); } }); });
+</script>

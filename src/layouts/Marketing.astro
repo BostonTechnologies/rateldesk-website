@@ -1,0 +1,9 @@
+---
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer.astro';
+import SearchDialog from '../components/SearchDialog.astro';
+import '../styles/global.css';
+const { title = 'RatelDesk — Your service desk. Under your control.', description = 'Bring incidents, email and service requests together. RatelDesk is the self-hosted, open-source helpdesk with AI and NetRatel automation from Boston Technologies.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#080c14"/><meta name="color-scheme" content="dark"/><title>{title}</title><link rel="canonical" href={canonical}/><link rel="icon" type="image/png" href="/brand/rateldesk-mark-32.png"/><link rel="apple-touch-icon" href="/brand/apple-touch-icon.png"/><meta property="og:type" content="website"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/brand/rateldesk-social-preview.webp', Astro.site)}/><meta name="twitter:card" content="summary_large_image"/></head><body class="marketing"><a class="skip-link" href="#main">Skip to content</a><header class="marketing-header"><SiteNav/></header><main id="main"><slot/></main><Footer/><SearchDialog/></body></html>

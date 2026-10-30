@@ -1,0 +1,75 @@
+{
+  "version": "0.1.2-beta.17",
+  "tag": "v0.1.2-beta.17",
+  "prerelease": true,
+  "publishedAt": "2026-10-30T03:07:05Z",
+  "url": "https://github.com/BostonTechnologies/rateldesk/releases/tag/v0.1.2-beta.17",
+  "sourceCommit": "487052fab83d8d81cb41ae5b073fd75ab61e42ae",
+  "stable": {
+    "version": "0.1.1",
+    "url": "https://github.com/BostonTechnologies/rateldesk/releases/tag/v0.1.1",
+    "publishedAt": "2026-10-15T09:21:28Z"
+  },
+  "assets": [
+    {
+      "name": "rateldesk-cli-0.1.2-beta.17-linux-arm64.tar.gz",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-cli-0.1.2-beta.17-linux-arm64.tar.gz",
+      "bytes": 58626006,
+      "sha256": "e3b795568b282fec93ee9d6ba00cad1ddde0fef85d1db1222cb567214cb4dcb3"
+    },
+    {
+      "name": "rateldesk-cli-0.1.2-beta.17-linux-x64.tar.gz",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-cli-0.1.2-beta.17-linux-x64.tar.gz",
+      "bytes": 61192579,
+      "sha256": "376a8edb18130a5fd05eb6f02525bef816d3710c3cdb470bebcffa5f4a374dc9"
+    },
+    {
+      "name": "rateldesk-cli-0.1.2-beta.17-win-x64.zip",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-cli-0.1.2-beta.17-win-x64.zip",
+      "bytes": 62057668,
+      "sha256": "418892d794276d507ad189b3b202a3f10dc540dcb439c3379a7a7d305502829c"
+    },
+    {
+      "name": "rateldesk-deployment-0.1.2-beta.17.tar.gz",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-deployment-0.1.2-beta.17.tar.gz",
+      "bytes": 10489542,
+      "sha256": "3a75fea5f0d8c8df04ca0a576fcbf5fc0dce6045dc3d4712d49aefe70fbb5645"
+    },
+    {
+      "name": "rateldesk-mcp-stdio-0.1.2-beta.17-linux-arm64.tar.gz",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-mcp-stdio-0.1.2-beta.17-linux-arm64.tar.gz",
+      "bytes": 58545539,
+      "sha256": "8ffc8f12de23241fc3abc9a181a93c887a74386af1ae6dd5aef83c7bbbd8fb4b"
+    },
+    {
+      "name": "rateldesk-mcp-stdio-0.1.2-beta.17-linux-x64.tar.gz",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-mcp-stdio-0.1.2-beta.17-linux-x64.tar.gz",
+      "bytes": 61097671,
+      "sha256": "3d27b6c95692d458eef5779fee0128d32671297fe95e0ea4f360e5eb9d34f16d"
+    },
+    {
+      "name": "rateldesk-mcp-stdio-0.1.2-beta.17-win-x64.zip",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/rateldesk-mcp-stdio-0.1.2-beta.17-win-x64.zip",
+      "bytes": 61962457,
+      "sha256": "0fa39ceabd0c377be6b5946fb466069fe87b984400114c42d4c74fad0b688506"
+    },
+    {
+      "name": "release-manifest.json",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/release-manifest.json",
+      "bytes": 1622,
+      "sha256": "e31eb3e5ca72b7d5b6d8265ca50742e75cf875902aeb637cc06e3cf16f81dba9"
+    },
+    {
+      "name": "release-manifest.json.sha256",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/release-manifest.json.sha256",
+      "bytes": 88,
+      "sha256": "ad80e593c79420cb96f537349936384e97d65cba385f48e77e2becced46cd79e"
+    },
+    {
+      "name": "SHA256SUMS",
+      "url": "https://github.com/BostonTechnologies/rateldesk/releases/download/v0.1.2-beta.17/SHA256SUMS",
+      "bytes": 786,
+      "sha256": "4a1cad9552abed2ff84216a04602b56a41e1708297d79468c4cc3e9f8d35874a"
+    }
+  ]
+}
