@@ -62,7 +62,7 @@ External users need a verified identity link and organization access. Email matc
 
 For the example above, emit `rateldesk-test-instance-admins` in the API access token’s `groups` claim and deliberately add the administrator to that group. `HelpdeskAdmin` is the compatibility permission for **Instance Administrator**. Configure the mapping on the API; a Web navigation role alone does not authorize API requests.
 
-The shipped API role mapping recognizes `rateldesk:role:admin` as `HelpdeskAdmin` and `rateldesk:role:technician` as `Technician`. Configure provider claims deliberately and use [organization roles](/docs/identity/users-and-roles/) for the required scope.
+Use group names without `:` for configured `RoleMappings` in this documented release. Its dictionary binding treats `:` as configuration nesting and drops those mapping keys, including the shipped `rateldesk:role:admin` entry. The dashed group name in the example above avoids that limitation. The compatibility group `helpdesk:role:helpdesk-admin` is recognized directly by the application and does not depend on that dictionary binding.
 
 Ordinary tenant roles are saved application assignments. Emitting a group named `TenantAdministrator` or `Technician` does not create the corresponding organization-scoped assignment. Follow the [group and role mapping plan](/docs/identity/oidc/providers/#plan-groups-and-roles).
 

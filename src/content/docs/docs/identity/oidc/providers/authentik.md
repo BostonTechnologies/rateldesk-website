@@ -42,7 +42,9 @@ Authentication__Authentik__RoleMappings__rateldesk-test-instance-admins: Helpdes
 
 Use the exact emitted name. Map a separate production group in the production API. `HelpdeskAdmin` grants **Instance Administrator**; `InstanceAdministrator` is the application’s catalog-role key, not the compatibility permission used by this mapping.
 
-The release also recognizes the compatibility group `helpdesk:role:helpdesk-admin` directly and ships a `rateldesk:role:admin` mapping. Shared groups can therefore grant administration in multiple installations. Audit existing mappings and memberships before treating a new environment-specific group as the only source of authority.
+Use a group name without `:` for `RoleMappings` in this documented release: dictionary binding treats those separators as configuration nesting and drops the complete group key. This also affects the shipped `rateldesk:role:admin` entry; use the dashed example above.
+
+The compatibility group `helpdesk:role:helpdesk-admin` is recognized directly by the application, independently of that dictionary binding. A shared compatibility group can therefore grant administration in multiple installations. Audit existing mappings and memberships before treating a new environment-specific group as the only source of authority.
 
 Ordinary roles need [saved organization assignments](/docs/identity/oidc/providers/#plan-groups-and-roles). Do not translate all staff or all application users to `HelpdeskAdmin` to make a page load.
 
