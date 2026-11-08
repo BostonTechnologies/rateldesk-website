@@ -5,6 +5,8 @@ description: Configure the Authentik browser flow, callback URLs, API audience a
 
 Connect RatelDesk's browser sign-in to Authentik using authorization code with PKCE. Start with a working [HTTPS instance](/docs/deployment/public-https/) and a completed local administrator setup.
 
+Choose the [provider setup guide](/docs/identity/oidc/providers/) for your identity service. Keep test and production applications, groups, callbacks and secrets separate.
+
 ## 1. Prepare the provider
 
 Create an Authentik OAuth2/OpenID provider and application for RatelDesk. Configure a confidential client, a signing key and exact public callback URLs:
@@ -30,6 +32,7 @@ services:
       Authentication__Mode: Hybrid
       Authentication__Authentik__Authority: https://id.example.com/application/o/rateldesk/
       Authentication__Authentik__Audience: your-access-token-audience
+      Authentication__Authentik__RoleMappings__rateldesk-test-instance-admins: HelpdeskAdmin
   web:
     environment:
       Authentication__Mode: Hybrid
@@ -57,9 +60,13 @@ Adjust the public-overlay filename if your deployment uses another one.
 
 External users need a verified identity link and organization access. Email matching alone does not link an account. The customer login/invitation workflow establishes ordinary user links; explicitly authorized external instance administrators can sign in without a customer-contact link.
 
+For the example above, emit `rateldesk-test-instance-admins` in the API access token’s `groups` claim and deliberately add the administrator to that group. `HelpdeskAdmin` is the compatibility permission for **Instance Administrator**. Configure the mapping on the API; a Web navigation role alone does not authorize API requests.
+
 The shipped API role mapping recognizes `rateldesk:role:admin` as `HelpdeskAdmin` and `rateldesk:role:technician` as `Technician`. Configure provider claims deliberately and use [organization roles](/docs/identity/users-and-roles/) for the required scope.
 
-In a fresh browser session, choose **Sign in with Authentik**. Confirm the expected organization, role access and a permitted ticket read. Check sign-out and a second sign-in.
+Ordinary tenant roles are saved application assignments. Emitting a group named `TenantAdministrator` or `Technician` does not create the corresponding organization-scoped assignment. Follow the [group and role mapping plan](/docs/identity/oidc/providers/#plan-groups-and-roles).
+
+In a fresh browser session, choose **Sign in with Authentik**. Confirm the expected organization, role access and a permitted ticket read. Open **Administration → Integration**, check that credentials and system connections load, then check sign-out and a second sign-in. A successful home page alone does not verify integration access.
 
 For SSO-only access, change `Authentication__Mode` to `Oidc` in both overlay services and recreate them again. Hybrid keeps both methods visible.
 
@@ -70,6 +77,7 @@ For SSO-only access, change `Authentication__Mode` to `Oidc` in both overlay ser
 | Web fails at startup | Required issuer, client ID, API scope and secret |
 | Callback rejected | Exact URL, public HTTPS scheme and forwarded-header trust |
 | Provider succeeds but application denies access | API audience, external identity link and organization permissions |
+| `HelpdeskAdmin` appears but Integration returns `HTTP-403` | Credential ownership also needs an enabled persisted application account associated with the verified issuer and subject. Check the running release’s OIDC ownership support; adding another group cannot repair a missing account association. |
 
 The beta.17 Web flow uses this Authentik namespace. API `AzureAd` bearer settings alone do not configure direct Entra browser sign-in. For Entra users, use [Authentik federation](https://docs.goauthentik.io/users-sources/sources/social-logins/entra-id/oauth/).
 
